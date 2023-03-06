@@ -40,7 +40,7 @@ linux:
 appImage:
   artifactName: ${name}-${version}.${ext}
 npmRebuild: false
-publish:
-  provider: github
-  owner: zwwwybkpp
-  repo: countdown
+# publish:
+#   provider: github
+#   owner: zwwwybkpp
+#   repo: countdown

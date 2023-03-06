@@ -1,4 +1,4 @@
-import { app, shell, BrowserWindow, Tray, Menu } from 'electron'
+import { app, shell, BrowserWindow, Tray, Menu, autoUpdater } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
@@ -48,6 +48,9 @@ function setTray() {
   tray.setToolTip('倒计时')
   tray.setContextMenu(contextMenu)
 }
+autoUpdater.setFeedURL({
+  url: 'https://update.electronjs.org/OWNER/REPO/${process.platform}/${app.getVersion()}'
+})
 app.whenReady().then(() => {
   electronApp.setAppUserModelId('com.electron')
   app.on('browser-window-created', (_, window) => {
@@ -55,7 +58,7 @@ app.whenReady().then(() => {
   })
   createWindow()
   setTray()
-
+  autoUpdater.checkForUpdates()
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
@@ -71,8 +74,4 @@ app.on('window-all-closed', () => {
  */
 app.setLoginItemSettings({
   openAtLogin: true
-})
-require('update-electron-app')({
-  repo: 'zwwwybkpp/countdown',
-  logger: require('electron-log')
 })

@@ -1,6 +1,6 @@
 {
   "name": "countdown",
-  "version": "2.5.4",
+  "version": "2.4.9",
   "description": "A Counttime App",
   "main": "./out/main/index.js",
   "author": "wann",
@@ -51,5 +51,11 @@
     "vite": "^4.0.4",
     "vue": "^3.2.45",
     "vue-tsc": "^1.0.22"
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "zwwwybkpp",
+    "repo": "countdown",
+    "token": "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"
   }
 }
