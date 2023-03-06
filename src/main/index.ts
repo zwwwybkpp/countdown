@@ -72,3 +72,7 @@ app.on('window-all-closed', () => {
 app.setLoginItemSettings({
   openAtLogin: true
 })
+require('update-electron-app')({
+  repo: 'zwwwybkpp/countdown',
+  logger: require('electron-log')
+})

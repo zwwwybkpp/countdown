@@ -1,3 +1,5 @@
-provider: generic
-url: https://example.com/auto-updates
+provider: github
+owner: zwwwybkpp
+repo: countdown
+# url: https://example.com/auto-updates
 updaterCacheDirName: my-app-updater
